@@ -1,4 +1,4 @@
-# 🚀 Media Transformatör - Dark-Pro v1.0.4
+# 🚀 Media Transformatör - Dark-Pro v1.0.1
 
 Basit, hızlı ve şık bir arayüzle medya dönüştürme işlemlerini (Video'dan GIF'e, MP4 sıkıştırma vb.) tek tıkla yapmanızı sağlayan masaüstü uygulamasıdır. **%100 Python ve Tkinter** kullanılarak geliştirilmiştir.
 
@@ -27,7 +27,7 @@ Uygulama, tüm karmaşık işlemleri arkada popüler medya motoru **FFmpeg** ile
 
 Uygulamayı kullanmak için herhangi bir kurulum gerekmez. En güncel sürümü indirin ve çalıştırmanız yeterlidir.
 
-➡️ **[Media-Transformator-v1.0.4.exe'yi Buradan İndir](https://github.com/jasonbreakberk/Media-Transformator-Py/releases/latest)**
+➡️ **[Media-Transformator-v1.0.1.exe'yi Buradan İndir](https://github.com/jasonbreakberk/Media-Transformator-Py/releases/latest)**
 
 ### 🐍 Geliştiriciler İçin
 
@@ -46,7 +46,7 @@ Eğer kodu incelemek isterseniz:
     python main.py
     ```
 
-## 🐞 Çözülen Önemli Sorunlar (v1.0.4)
+## 🐞 Çözülen Önemli Sorunlar (v1.0.1)
 
 Bu sürüm, geliştirme aşamasında karşılaşılan ve uygulamanın stabilitesini artıran kritik bir hatayı içermektedir:
 
