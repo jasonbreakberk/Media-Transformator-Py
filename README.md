@@ -1,37 +1,48 @@
-# 🚀 Media Transformatör - Dark-Pro v1.0.1
+# 🚀 Media Transformatör - Dark-Pro v1.1.0
 
-Basit, hızlı ve şık bir arayüzle medya dönüştürme işlemlerini (Video'dan GIF'e, MP4 sıkıştırma vb.) tek tıkla yapmanızı sağlayan masaüstü uygulamasıdır. **%100 Python ve Tkinter** kullanılarak geliştirilmiştir.
+Bu uygulama, video ve fotoğraf dönüştürme işlemlerini (kırpma, sıkıştırma, format değiştirme) kullanıcı dostu, karanlık temalı bir arayüzle gerçekleştiren, **tek başına çalışan (standalone) bir Windows masaüstü aracıdır.**
 
-Uygulama, tüm karmaşık işlemleri arkada popüler medya motoru **FFmpeg** ile gerçekleştirir, böylece en yüksek dönüştürme kalitesini sunar.
+## ✨ Temel Özellikler (v1.1.0)
 
-## ✨ Temel Özellikler
+### YENİ ÖZELLİK: Video Kırpma (Klip Üretimi)
+* **Video Kırpma (Trim):** İçerik üreticileri için kritik! Yüklenen videonun sadece belirlenen **Başlangıç** ve **Bitiş saniyeleri** arasını kırparak yeni bir klip oluşturur. (saniye veya hh:mm:ss formatında giriş desteklenir.)
 
-* **Video'dan GIF'e Dönüştürme:** Saniyeler içinde yüksek kaliteli GIF'ler oluşturun.
-* **MP4 Boyut Küçültme:** Videolarınızı kaliteden ödün vermeden sıkıştırın.
-* **MP3'e Dönüştürme:** Videolardan sesi hızla MP3 formatında çıkarın.
-* **Fotoğraf GIF Animasyonu:** Birden fazla fotoğrafı 5 saniyelik GIF animasyonuna çevirin.
-* **Tek Dosya (OneFile) Çalışma:** Uygulama, FFmpeg dahil tüm bağımlılıklarıyla birlikte **tek bir EXE** dosyası olarak paketlenmiştir. (90+ MB)
-* **Modern Arayüz:** `customtkinter` kütüphanesi ile Dark-Pro temalı, şık ve modern bir kullanıcı deneyimi.
+### Dönüştürme İşlevleri
+* **Video'dan GIF'e Dönüştürme:** Saniyeler içinde yüksek kaliteli, döngülü GIF'ler üretir.
+* **MP4 Boyut Küçültme:** Videolarınızı kaliteyi koruyarak sıkıştırır.
+* **MP3'e Dönüştürme:** Videolardan sesi MP3 formatında ayırır.
+* **Fotoğraf GIF Animasyonu:** Tek bir JPG/PNG'yi 5 saniyelik animasyonlu GIF'e çevirir.
 
-## ⚙️ Teknoloji Yığını
+### Teknik Mimarisi
+* **Tek Dosya (OneFile) EXE:** Uygulama, FFmpeg motoru dahil tüm bağımlılıklarıyla birlikte tek bir 90+ MB'lık EXE dosyası olarak paketlenmiştir.
+* **Modern Arayüz:** `customtkinter` kütüphanesi ile Dark-Pro temalı, şık ve sade bir kullanıcı deneyimi sunar.
 
-* **Python:** Projenin ana dili.
-* **customtkinter:** Modern, karanlık tema destekli arayüz kütüphanesi.
-* **FFmpeg:** Tüm medya işleme ve dönüştürme görevleri için kullanılan güçlü açık kaynak motor.
-* **PyInstaller:** Uygulamayı tek başına çalışabilen (standalone) Windows EXE dosyasına paketlemek için kullanıldı.
-* **Git / GitHub:** Sürüm kontrol ve yayınlama platformu.
+---
+
+## ⚙️ Çözülen Kritik Sorunlar ve Teknik Detaylar
+
+Bu projenin geliştirme aşamasında, Python'ın PyInstaller ve FFmpeg entegrasyonundan kaynaklanan ve uygulamanın stabilitesini doğrudan etkileyen zorlu hatalar aşılmıştır.
+
+| Sorun Adı | Çözüm Yöntemi | Etkilenen Sürüm |
+| :--- | :--- | :--- |
+| **`Popen.__init__() creationflags` Hatası** | Python'ın 3.10+ sürümleriyle uyumluluk sorununu çözmek için, `subprocess` komutundaki uyumsuz **`creation_flags`** parametresi tamamen kaldırılmış, komutlar yeni sürüme uyumlu hale getirilmiştir. | v1.0.1 (Yeniden Oluşturuldu) |
+| **FFprobe Süre Okuma Hatası** | Dosya yolundaki boşluklar ve Türkçe karakterler nedeniyle `ffprobe`'un süre okuyamaması sorunu, `subprocess` komutlarının doğru tırnaklama ve komut listesi yapısıyla yeniden düzenlenmesiyle çözülmüştür. | v1.1.0 |
+| **CMD Penceresinin Görünmesi** | Arka planda anlık açılıp kapanan CMD/Terminal penceresi, **`--windowed`** PyInstaller bayrağı ve `creation_flags` yönetimi ile tamamen gizlenmiştir. | v1.0.1 |
+| **Dosya Adı Taşması** | UX iyileştirmesi olarak, uzun dosya adlarının statü çubuğundan taşması `os.path.basename` metodu ile kısaltılarak engellenmiştir. | v1.1.0 |
+
+---
 
 ## 🛠️ Kurulum ve Çalıştırma
 
 ### 📥 EXE İndirme (Tavsiye Edilen)
 
-Uygulamayı kullanmak için herhangi bir kurulum gerekmez. En güncel sürümü indirin ve çalıştırmanız yeterlidir.
+En güncel çalışan sürümü indirin. Kurulum gerektirmez.
 
-➡️ **[Media-Transformator-v1.0.1.exe'yi Buradan İndir](https://github.com/jasonbreakberk/Media-Transformator-Py/releases/latest)**
+➡️ **[Media-Transformatör-v1.1.0.exe'yi İndir](https://github.com/jasonbreakberk/Media-Transformator-Py/releases/latest)**
 
 ### 🐍 Geliştiriciler İçin
 
-Eğer kodu incelemek isterseniz:
+Projenin kaynak kodunu incelemek isterseniz:
 
 1.  **Klonlayın:**
     ```bash
@@ -39,19 +50,12 @@ Eğer kodu incelemek isterseniz:
     ```
 2.  **Bağımlılıkları Yükleyin:**
     ```bash
-    pip install -r requirements.txt
+    pip install customtkinter ffmpeg-python pyinstaller
     ```
 3.  **Çalıştırın:**
     ```bash
-    python main.py
+    python app.py
     ```
-
-## 🐞 Çözülen Önemli Sorunlar (v1.0.1)
-
-Bu sürüm, geliştirme aşamasında karşılaşılan ve uygulamanın stabilitesini artıran kritik bir hatayı içermektedir:
-
-* **`Popen.__init__() got an unexpected keyword argument 'creationflags'` Hatası Çözümü:** Özellikle Python'ın 3.13 ve daha yeni sürümlerinde ortaya çıkan, Windows'a özgü bu uyumluluk sorunu, `subprocess.Popen` metodunda yapılan spesifik düzenlemelerle tamamen giderilmiştir.
-* **CMD Penceresinin Görünmesi Engellendi:** Uygulama çalışırken arka planda anlık olarak açılıp kapanan CMD/Terminal penceresi, **`creationflags=subprocess.SW_HIDE`** (veya benzeri bir metod) kullanılarak tamamen gizlenmiştir. Bu sayede kullanıcıya pürüzsüz bir masaüstü deneyimi sunulmuştur.
 
 ---
 
@@ -59,4 +63,4 @@ Bu sürüm, geliştirme aşamasında karşılaşılan ve uygulamanın stabilites
 
 **[Harun Çelebi](https://github.com/jasonbreakberk)**
 
-*Bu proje, geliştiricinin Python ve masaüstü uygulama geliştirme yeteneklerini gösteren bir portfolyo çalışmasıdır.*
+*Bu proje, geliştiricinin Python, Windows masaüstü uygulaması geliştirme ve zorlu üçüncü parti kütüphane (FFmpeg) entegrasyonu yeteneklerini gösteren bir portfolyo çalışmasıdır.*
