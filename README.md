@@ -4,7 +4,7 @@ Bu uygulama, video ve fotoğraf dönüştürme işlemlerini (kırpma, sıkışt�
 
 ## ✨ Temel Özellikler (v1.2.0)
 
-### YENİ ÖZELLİK: Video Kırpma (Klip Üretimi)
+### Video Kırpma (Klip Üretimi)
 * **Video Kırpma (Trim):** İçerik üreticileri için kritik! Yüklenen videonun sadece belirlenen **Başlangıç** ve **Bitiş saniyeleri** arasını kırparak yeni bir klip oluşturur. (saniye veya hh:mm:ss formatında giriş desteklenir.)
 
 ### Dönüştürme İşlevleri
@@ -16,11 +16,15 @@ Bu uygulama, video ve fotoğraf dönüştürme işlemlerini (kırpma, sıkışt�
 ### Teknik Mimarisi
 * **Tek Dosya (OneFile) EXE:** Uygulama, FFmpeg motoru dahil tüm bağımlılıklarıyla birlikte tek bir 90+ MB'lık EXE dosyası olarak paketlenmiştir.
 * **Modern Arayüz:** `customtkinter` kütüphanesi ile Dark-Pro temalı, şık ve sade bir kullanıcı deneyimi sunar.
+* **Tema Desteği:** Koyu (Dark) ve Aydınlık (Light) tema arasında anında geçiş.
+* **Dil Desteği:** Türkçe ve İngilizce arayüz (dinamik lokalizasyon).
+* **Gelişmiş İlerleme Göstergesi:** Yüzde, geçen süre, hız ve tahmini kalan süre (ETA) bilgisi.
 
 ## 🆕 Bu Sürümde (v1.2.0)
 
-- **İlerleme çubuğunun %96'da takılması düzeltildi.** FFmpeg sürecinin `stdout/stderr` tamponlarının dolmasıyla oluşan kilitlenme, çıktılar `DEVNULL`'a yönlendirilerek giderildi. İşlem tamamlanınca bar artık beklemeden %100'e ilerliyor.
-- **Hata yakalama iyileştirmesi.** FFmpeg başarısız olduğunda daha güvenli ve özet hata mesajı oluşturuluyor.
+- **Aydınlık Tema (Light) Desteği:** Koyu/Aydınlık tema arasında tek tıkla geçiş.
+- **İngilizce Dil Desteği:** Arayüz artık Türkçe ve İngilizce arasında dinamik olarak değiştirilebilir.
+- **Yüzde Bazlı İlerleme Sistemi:** İlerleme çubuğu artık yüzde, geçen süre, hız ve ETA ile daha anlaşılır.
 
 ## ⚙️ Çözülen Kritik Sorunlar ve Teknik Detaylar
 
